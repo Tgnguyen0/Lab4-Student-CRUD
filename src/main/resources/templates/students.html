@@ -19,11 +19,13 @@
         <div class="card-body">
 
             <!-- Search Form -->
+            <!-- Bắt buộc phải có th:action="@{/web/students/search} thì GET mới hoạt động với-->
             <form th:action="@{/web/students/search}" method="get" class="row g-2 mb-3">
                 <div class="col-md-8">
                     <input type="number" name="id" class="form-control" placeholder="Nhập ID sinh viên..." required>
                 </div>
                 <div class="col-md-4 d-grid">
+                    <!--Cụ thể là tag Button này-->
                     <button type="submit" class="btn btn-success">
                         🔍 Tìm kiếm
                     </button>
@@ -62,12 +64,14 @@
                     </thead>
 
                     <tbody>
+                    <!--Dữ liệu từ controller được đẩy qua students.html-->
                     <tr th:each="s : ${students}">
                         <td th:text="${s.id}"></td>
                         <td th:text="${s.name}"></td>
                         <td th:text="${s.email}"></td>
                         <td th:text="${s.age}"></td>
                         <td>
+                            <!--Chèn tham số id vào để lấy-->
                             <a th:href="@{/web/students/edit/{id}(id=${s.id})}" class="btn btn-warning btn-sm">
                                 ✏ Edit
                             </a>

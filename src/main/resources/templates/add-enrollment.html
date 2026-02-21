@@ -20,6 +20,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Chọn sinh viên</label>
+                    <!--Tên biến phải giống name thì RequestParam mới hoạt động-->
                     <select class="form-select" name="studentId" required>
                         <option value="">-- Chọn sinh viên --</option>
                         <option th:each="s : ${students}"
@@ -31,6 +32,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Chọn môn học</label>
+                    <!--Tên biến phải giống name thì RequestParam mới hoạt động-->
                     <select class="form-select" name="subjectId" required>
                         <option value="">-- Chọn môn học --</option>
                         <option th:each="sub : ${subjects}"

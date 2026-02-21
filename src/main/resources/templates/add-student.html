@@ -18,6 +18,7 @@
 
         <div class="card-body">
 
+            <!-- Bắt buộc phải có th:action="@{/web/students/save}" thì POST mới hoạt động-->
             <form th:action="@{/web/students/save}" th:object="${student}" method="post">
 
                 <div class="mb-3">
@@ -40,6 +41,7 @@
                         ⬅ Back
                     </a>
 
+                    <!-- Cụ thể là cho tag Button này-->
                     <button type="submit" class="btn btn-success">
                         💾 Save
                     </button>
